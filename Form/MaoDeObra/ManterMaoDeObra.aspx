@@ -7,7 +7,7 @@
                 <h1>Mao De Obra</h1>
                 <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir a Mao-de-Obra.</p>
             </div>
-            <div class="row">
+            <div class="row"> 
                 <div class="col-md-12">
                     <fieldset title="Pesquisar Mao De Obra">
                         <legend>
