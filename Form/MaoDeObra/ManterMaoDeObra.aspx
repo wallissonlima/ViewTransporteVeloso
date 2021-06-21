@@ -1,12 +1,11 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManterMaoDeObra.aspx.cs" Inherits="ViewTransporteVeloso.Form.MaoDeObra.ManterMaoDeObra" %>
+﻿<%@ Page Title="Manter Mão de Obra" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManterMaoDeObra.aspx.cs" Inherits="ViewTransporteVeloso.Form.MaoDeObra.ManterMaoDeObra" %>
 
-
-<asp:Content ID="ManterMaoDeObraContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="MaoDeObraContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upnMaoDeObra" runat="server">
         <Contenttemplate>
             <div class="jumbotron">
-                <h1> Mao De Obra</h1>
-                <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir a Mao De Obra.</p>
+                <h1>Mao De Obra</h1>
+                <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir a Mao-de-Obra.</p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -31,7 +30,11 @@
                         <legend>
                             <h2>Listar Mao De Obra</h2>
 
-                            <asp:GridView ID="gvDados" runat="server" AutoGenerateColumns="false" CellPadding="4"
+                            <asp:GridView runat="server" ID="gvDados">
+
+                            </asp:GridView>
+
+                            <asp:GridView runat="server" AutoGenerateColumns="false" CellPadding="4"
                                 DataKeyNames="idMaoDeObra" Font-Names="Verdana" Font-Size="10pt" ForeColor="#003366" GridLines="None"
                                 ShowFooter="False" Style="vertical-align: top" Width="100%" OnSelectedIndexChanged="gvDados_SelectedIndexChanged"
                                 OnRowCommand="gvDados_RowCommand" OnRowDataBound="gvDados_RowDataBound" OnPageIndexChanging="gvDados_PageIndexChanging" Visible="true">

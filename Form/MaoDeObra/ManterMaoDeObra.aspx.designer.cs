@@ -11,7 +11,7 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
 {
 
 
-    public partial class ManterMaoDeObra
+    public partial class ManterMaoDeObra 
     {
 
         /// <summary>

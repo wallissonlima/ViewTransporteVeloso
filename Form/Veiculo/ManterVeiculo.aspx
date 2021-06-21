@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManterVeiculo.aspx.cs" Inherits="ViewTransporteVeloso.Form.Veiculo.ManterVeiculo" %>
+﻿<%@ Page Title="Manter Veículo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManterVeiculo.aspx.cs" Inherits="ViewTransporteVeloso.Form.Veiculo.ManterVeiculo" %>
 
 <asp:Content ID="VeiculoContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upnManterVeiculo" runat="server">

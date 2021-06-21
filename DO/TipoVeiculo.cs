@@ -48,7 +48,7 @@ namespace ViewTransporteVeloso.DO
             return lstVeiculo;
         }
 
-        public List<TipoVeiculo> GetTipoVeiculo(object p, int idTipoVeiculo)
+        public List<TipoVeiculo> GetTipoVeiculo(int idTipoVeiculo)
         {
             List<TipoVeiculo> lstTipoVeiculo = new List<TipoVeiculo>();
 
