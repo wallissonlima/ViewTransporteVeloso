@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoVeiculo.aspx.cs" Inherits="ViewTransporteVeloso.Form.TipoVeiculo.TipoVeiculo" %>
+﻿<%@ Page Title="Tipo Veiculo" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TipoVeiculo.aspx.cs" Inherits="ViewTransporteVeloso.Form.TipoVeiculo.TipoVeiculo" %>
 
 <asp:Content ID="TipoVeiculoContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:UpdatePanel ID="upnManterTipoVeiculo" runat="server">
-        <contenttemplate>
+    <asp:UpdatePanel ID="upnTipoVeiculo" runat="server">
+        <Contenttemplate>
             <div class="jumbotron">
-                <h1>Manter Tipo Veículo</h1>
+                <h1>Tipo Veículo</h1>
                 <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir o tipo veículo.</p>
             </div>
             <div class="row">
@@ -15,8 +15,8 @@
 
                             <div class="row">
                                 <div class="col-md-12">
-                                    <asp:Label runat="server" ID="lbPlacaPesquisa">Descrição:</asp:Label>
-                                    <asp:TextBox runat="server" ID="tbPlacaPesquisa" MaxLength="7"></asp:TextBox>
+                                    <asp:Label runat="server" ID="lbDescricaoPesquisa">Descrição:</asp:Label>
+                                    <asp:TextBox runat="server" ID="tbDescricaoPesquisa" MaxLength="50"></asp:TextBox>
                                     <asp:Button runat="server" ID="btnPesquisar" OnClick="btnPesquisar_Click" Text="Pesquisar &raquo;" CssClass="btn btn-default" />
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 OnRowCommand="gvDados_RowCommand" OnRowDataBound="gvDados_RowDataBound" OnPageIndexChanging="gvDados_PageIndexChanging" Visible="true">
                                 <Columns>
                                     <asp:BoundField DataField="idTipoVeiculo" HeaderText="Código" Visible="false" />
-                                    <asp:BoundField DataField="descricao" HeaderText="Placa" />
+                                    <asp:BoundField DataField="descricao" HeaderText="Descrição" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="btnAlterar" runat="server"
@@ -75,7 +75,7 @@
                     <fieldset>
                         <legend>
                             <h2 runat="server" id="hTitulo">Cadastrar Tipo Veículo</h2>
-                        
+                         </legend>    
                         <div class="row">
                             <div class="col-md-12">
                                 <table>
@@ -88,10 +88,9 @@
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                            </legend>
-                        </fieldset>
+                        </div>                      
                     </div>
+                </fieldset>
                 <br />
                 <p>
                     <%--<a runat="server" Onclick="btnSalvar_Click"  class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>--%>
@@ -101,6 +100,6 @@
                 </p>
 
             </div>
-        </contenttemplate>
+        </Contenttemplate>
     </asp:UpdatePanel>
 </asp:Content>

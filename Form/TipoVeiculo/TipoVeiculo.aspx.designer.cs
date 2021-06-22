@@ -15,31 +15,31 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
     {
 
         /// <summary>
-        /// Controle upnManterTipoVeiculo.
+        /// Controle upnTipoVeiculo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upnManterTipoVeiculo;
+        protected global::System.Web.UI.UpdatePanel upnTipoVeiculo;
 
         /// <summary>
-        /// Controle lbPlacaPesquisa.
+        /// Controle lbDescricaoPesquisa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbPlacaPesquisa;
+        protected global::System.Web.UI.WebControls.Label lbDescricaoPesquisa;
 
         /// <summary>
-        /// Controle tbPlacaPesquisa.
+        /// Controle tbDescricaoPesquisa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbPlacaPesquisa;
+        protected global::System.Web.UI.WebControls.TextBox tbDescricaoPesquisa;
 
         /// <summary>
         /// Controle btnPesquisar.

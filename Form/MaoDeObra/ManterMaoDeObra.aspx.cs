@@ -15,7 +15,7 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
 {
     public partial class ManterMaoDeObra : System.Web.UI.Page
     {
-        Util util = new Util();
+        //Util util = new Util();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
 
         protected void gvDados_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            //this.gvDados.PageIndex = e.NewPageIndex;
+            this.gvDados.PageIndex = e.NewPageIndex;
         }
 
         protected void gvDados_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -69,6 +69,9 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
         {
             DO.MaoDeObra objMaoDeObra = new DO.MaoDeObra();
             var lstMaoDeObra = objMaoDeObra.GetAll();
+
+            gvDados.DataSource = lstMaoDeObra;
+            gvDados.DataBind();
 
         }
         #endregion

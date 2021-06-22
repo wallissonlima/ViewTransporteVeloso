@@ -11,7 +11,7 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
 {
 
 
-    public partial class ManterMaoDeObra 
+    public partial class ManterMaoDeObra
     {
 
         /// <summary>
@@ -94,6 +94,24 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbDescricao;
+
+        /// <summary>
+        /// Controle lbValor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbValor;
+
+        /// <summary>
+        /// Controle tbValor.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbValor;
 
         /// <summary>
         /// Controle btnSalvar.

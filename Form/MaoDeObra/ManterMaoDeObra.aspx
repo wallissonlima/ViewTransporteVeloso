@@ -30,11 +30,7 @@
                         <legend>
                             <h2>Listar Mao De Obra</h2>
 
-                            <asp:GridView runat="server" ID="gvDados">
-
-                            </asp:GridView>
-
-                            <asp:GridView runat="server" AutoGenerateColumns="false" CellPadding="4"
+                            <asp:GridView ID="gvDados" runat="server" AutoGenerateColumns="false" CellPadding="4"
                                 DataKeyNames="idMaoDeObra" Font-Names="Verdana" Font-Size="10pt" ForeColor="#003366" GridLines="None"
                                 ShowFooter="False" Style="vertical-align: top" Width="100%" OnSelectedIndexChanged="gvDados_SelectedIndexChanged"
                                 OnRowCommand="gvDados_RowCommand" OnRowDataBound="gvDados_RowDataBound" OnPageIndexChanging="gvDados_PageIndexChanging" Visible="true">
@@ -79,7 +75,7 @@
                     <fieldset>
                         <legend>
                             <h2 runat="server" id="hTitulo">Cadastrar Mao De Obra</h2>
-                        
+                         </legend>
                         <div class="row">
                             <div class="col-md-12">
                                 <table>
@@ -88,14 +84,19 @@
                                             <asp:Label runat="server" ID="lbDescricao">Descricao:</asp:Label></td>
                                         <td>
                                             <asp:HiddenField runat="server" ID="hfIdMaoDeObra" />
-                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="7"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="500" TextMode="MultiLine" Height="30px"></asp:TextBox></td>
+                                    </tr>
+                                     <tr>
+                                        <td>
+                                            <asp:Label runat="server" ID="lbValor">Valor:</asp:Label></td>
+                                        <td>
+                                            <asp:TextBox runat="server" ID="tbValor" MaxLength="8"></asp:TextBox></td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>
-                            </legend>
-                        </fieldset>
-                    </div>
+                        </div>                          
+                     </div>  
+                 </fieldset>
                 <br />
                 <p>
                     <%--<a runat="server" Onclick="btnSalvar_Click"  class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>--%>

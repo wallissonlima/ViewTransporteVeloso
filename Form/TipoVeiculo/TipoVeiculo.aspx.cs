@@ -16,30 +16,15 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
 {
     public partial class TipoVeiculo : System.Web.UI.Page
     {
+        Util util = new Util();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                CarregarTipoVeiculo();
+                CarregarTipoVeiculo(string.Empty);
             }
         }
 
-        #region [BUTTON]
-        protected void btnSalvar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnPesquisar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnLimpar_Click(object sender, EventArgs e)
-        {
-
-        }
-        #endregion
 
         #region [GRIDVIEW]
         protected void gvDados_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,19 +43,129 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
 
         protected void gvDados_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+
 
         }
         #endregion
 
-        #region [Métodos Auxiliares]
-        private void CarregarTipoVeiculo()
+        #region [BUTTON]
+        protected void btnSalvar_Click(object sender, EventArgs e)
         {
             DO.TipoVeiculo objTipoVeiculo = new DO.TipoVeiculo();
-            var lstTipoVeiculo = objTipoVeiculo.GetAll();
 
-            gvDados.DataSource = lstTipoVeiculo;
-            gvDados.DataBind();
+            //Cadastro
+            if (!string.IsNullOrWhiteSpace(hfIdTipoVeiculo.Value) && hfIdTipoVeiculo.Value == "0")
+            {
+                try
+                {
+                    objTipoVeiculo.IdTipoVeiculo = int.Parse(hfIdTipoVeiculo.Value);
+                    objTipoVeiculo.Descricao = this.tbDescricao.Text;
+
+
+                    objTipoVeiculo.PutTipoVeiculo(objTipoVeiculo);
+
+                    CarregarTipoVeiculo(string.Empty);
+                    LimparFormulario();
+                    util.ShowMessage("Tipo Veículo cadastrado com sucesso!", upnTipoVeiculo);
+                }
+                catch (Exception ex)
+                {
+                    var test = ex.Message;
+                    util.ShowMessage("Erro cadastrar o Tipo Veículo! Favor entrar em contato com o administrador do sistema.", upnTipoVeiculo);
+                }
+            }
+            else
+            {
+                //Alteração
+                try
+                {
+                    objTipoVeiculo.IdTipoVeiculo = int.Parse(hfIdTipoVeiculo.Value);
+                    objTipoVeiculo.Descricao = this.tbDescricao.Text;
+
+                    objTipoVeiculo.PostTipoVeiculo(objTipoVeiculo);
+
+                    CarregarTipoVeiculo(string.Empty);
+                    LimparFormulario();
+                    util.ShowMessage("Tipo Veículo alterado com sucesso!", upnTipoVeiculo);
+                }
+                catch (Exception ex)
+                {
+                    var test = ex.Message;
+                    util.ShowMessage("Erro ao alterar do Tipo Veículo! Favor entrar em contato com o administrador do sistema.", upnTipoVeiculo);
+                }
+            }
+        }
+
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(this.tbDescricaoPesquisa.Text))
+                {
+                    CarregarTipoVeiculo(this.tbDescricaoPesquisa.Text);
+                }
+                else
+                {
+                    CarregarTipoVeiculo(string.Empty);
+                }
+            }
+            catch (Exception ex)
+            {
+                var test = ex.Message;
+                util.ShowMessage("Erro ao efetuar a pesquisa! Favor entrar em contato com o administrador do sistema.", upnTipoVeiculo);
+            }
+        }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            LimparFormulario();
+        }
+        #endregion
+
+        #region [Métodos Auxiliares]
+        private void CarregarTipoVeiculo(string descricao)
+        {
+            DO.TipoVeiculo objTipoVeiculo = new DO.TipoVeiculo();
+            List<GRIDTipoVeiculo> lstGridTipoVeiculo = new List<GRIDTipoVeiculo>();
+            List<DO.TipoVeiculo> lstTipoVeiculo = new List<DO.TipoVeiculo>();
+
+            if (string.IsNullOrEmpty(descricao))
+                lstTipoVeiculo = objTipoVeiculo.GetAll();
+            else
+                lstTipoVeiculo = objTipoVeiculo.GetTipoVeiculo(descricao);
+
+            if (lstTipoVeiculo.Count > 0)
+            {
+
+                foreach (var item in lstTipoVeiculo)
+                {
+                    GRIDTipoVeiculo objGridTipoVeiculo = new GRIDTipoVeiculo();
+                    objGridTipoVeiculo.IdTipoVeiculo = item.IdTipoVeiculo;
+
+                    objGridTipoVeiculo.Descricao = item.Descricao;
+
+
+                    lstGridTipoVeiculo.Add(objGridTipoVeiculo);
+                }
+
+                this.gvDados.DataSource = lstGridTipoVeiculo;
+                this.gvDados.DataBind();
+            }
+            else
+            {
+                util.ShowMessage("Não foram encontrados Tipo veículos com a placa informada!", upnTipoVeiculo);
+            }
+        }
+        
+        private void LimparFormulario()
+        {
+            hfIdTipoVeiculo.Value = "0";
+
+            this.tbDescricao.Text = string.Empty;
+
+            this.hTitulo.InnerText = "Cadastrar Veículo";
+
+            this.tbDescricao.Enabled = true;
         }
         #endregion
     }

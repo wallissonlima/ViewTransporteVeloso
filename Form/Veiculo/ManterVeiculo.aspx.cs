@@ -98,7 +98,7 @@ namespace ViewTransporteVeloso.Form.Veiculo
             {
                 try
                 {
-                    objVeiculo.IdTipoVeiculo = int.Parse(hfIdVeiculo.Value);
+                    objVeiculo.IdVeiculo = int.Parse(hfIdVeiculo.Value);
                     objVeiculo.Placa = this.tbPlaca.Text;
                     objVeiculo.IdTipoVeiculo = int.Parse(this.ddlTipoVeiculo.SelectedValue);
                     objVeiculo.Renavam = this.tbRenavam.Text;
