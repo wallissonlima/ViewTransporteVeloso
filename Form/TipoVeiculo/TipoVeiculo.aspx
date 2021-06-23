@@ -86,6 +86,12 @@
                                             <asp:HiddenField runat="server" ID="hfIdTipoVeiculo" />
                                             <asp:TextBox runat="server" ID="tbDescricao" MaxLength="7"></asp:TextBox></td>
                                     </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label runat="server" ID="lbTipoVeiculo">Tipo Veículo:</asp:Label></td>
+                                        <td>
+                                            <asp:DropDownList runat="server" ID="ddlTipoVeiculo"></asp:DropDownList></td>
+                                    </tr>
                                 </table>
                             </div>
                         </div>                      

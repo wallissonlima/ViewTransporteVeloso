@@ -22,6 +22,7 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
             if (!IsPostBack)
             {
                 CarregarTipoVeiculo(string.Empty);
+                hfIdTipoVeiculo.Value = "0";
             }
         }
 
@@ -43,7 +44,42 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
 
         protected void gvDados_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            DO.TipoVeiculo objTipoVeiculo = new DO.TipoVeiculo();
+            string idTipoVeiculo = e.CommandArgument.ToString();
 
+            switch (e.CommandName)
+            {
+                case "Alterar":
+                    if (!String.IsNullOrEmpty(idTipoVeiculo))
+                    {
+                        this.hTitulo.InnerText = "Alterar Tipo Veículo";
+
+                        objTipoVeiculo = objTipoVeiculo.GetTipoVeiculo(null, int.Parse(idTipoVeiculo)).FirstOrDefault();
+                        if (objTipoVeiculo != null)
+                        {
+                            hfIdTipoVeiculo.Value = objTipoVeiculo.IdTipoVeiculo.ToString();
+                            this.tbDescricao.Text = objTipoVeiculo.Descricao;
+
+                            this.tbDescricao.Enabled = false;
+                        }
+                    }
+                    break;
+
+                case "Excluir":
+
+                    if (!String.IsNullOrEmpty(idTipoVeiculo))
+                    {
+                        objTipoVeiculo = objTipoVeiculo.GetTipoVeiculo(null, int.Parse(idTipoVeiculo)).FirstOrDefault();
+
+                        var retorno = objTipoVeiculo.DeleteTipoVeiculo(objTipoVeiculo.Descricao, int.Parse(idTipoVeiculo));
+                        if (retorno == true)
+                        {
+                            CarregarTipoVeiculo(string.Empty);
+                            util.ShowMessage("Tipo veículo excluído com suscesso!", upnTipoVeiculo);
+                        }
+                    }
+                    break;
+            }
 
         }
         #endregion
@@ -60,7 +96,6 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
                 {
                     objTipoVeiculo.IdTipoVeiculo = int.Parse(hfIdTipoVeiculo.Value);
                     objTipoVeiculo.Descricao = this.tbDescricao.Text;
-
 
                     objTipoVeiculo.PutTipoVeiculo(objTipoVeiculo);
 
@@ -142,8 +177,8 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
                     GRIDTipoVeiculo objGridTipoVeiculo = new GRIDTipoVeiculo();
                     objGridTipoVeiculo.IdTipoVeiculo = item.IdTipoVeiculo;
 
+                   
                     objGridTipoVeiculo.Descricao = item.Descricao;
-
 
                     lstGridTipoVeiculo.Add(objGridTipoVeiculo);
                 }
@@ -153,10 +188,9 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
             }
             else
             {
-                util.ShowMessage("Não foram encontrados Tipo veículos com a placa informada!", upnTipoVeiculo);
+                util.ShowMessage("Não foram encontrados Tipo veículo com a descrição informada!", upnTipoVeiculo);
             }
         }
-        
         private void LimparFormulario()
         {
             hfIdTipoVeiculo.Value = "0";

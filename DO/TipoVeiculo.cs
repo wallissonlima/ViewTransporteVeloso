@@ -82,6 +82,46 @@ namespace ViewTransporteVeloso.DO
             return lstTipoVeiculo;
         }
 
+        public bool DeleteTipoVeiculo(string descricao = "", int idTipoVeiculo = 0)
+        {
+            try
+            {
+                //Recupera o endereço do serviço e monta a requisição. 
+                string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
+                string vPath = "TipoVeiculo/DeleteTipoVeiculo?descricao=" + descricao +
+                               "&idTipoVeiculo=" + idTipoVeiculo;
+
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + vPath);
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "DELETE";
+
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    //Obtem a resposta e desserializa o objeto Json.
+                    var retornoAPI = JsonConvert.DeserializeObject<bool>(streamReader.ReadToEnd());
+                    return retornoAPI;
+                }
+
+                //Fecha a requisição existente
+                if (httpResponse != null)
+                {
+                    httpResponse.Dispose();
+                    httpResponse.Close();
+                }
+
+                //Retorna do valor
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                var vError = ex.Message;
+                return false;
+            }
+
+        }
+
         /// <summary>
         /// Altera um veículo existente
         /// </summary>
@@ -186,7 +226,7 @@ namespace ViewTransporteVeloso.DO
                 throw new Exception(ex.ToString());
             }
         }
-#endregion
+        #endregion
     }
 
     public class GRIDTipoVeiculo
