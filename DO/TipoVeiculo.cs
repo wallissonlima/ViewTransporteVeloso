@@ -55,10 +55,11 @@ namespace ViewTransporteVeloso.DO
 
             //Recupera o endereço do serviço e monta a requisição. 
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-            var urlPreenchida = ApiBaseUrl + "TipoVeiculo/GetTipoVeiculo?idTipoVeiculo=" + idTipoVeiculo;
+            var vPath = "TipoVeiculo/GetTipoVeiculo?descricao=" + descricao +
+                        "&idTipoVeiculo=" + idTipoVeiculo;
 
             //Preenche o cabeçalho da requisição
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(urlPreenchida);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + vPath);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "GET";
 

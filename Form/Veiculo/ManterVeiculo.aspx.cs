@@ -192,7 +192,7 @@ namespace ViewTransporteVeloso.Form.Veiculo
                     objGridVeiculo.IdVeiculo = item.IdVeiculo;
 
                     DO.TipoVeiculo objTipoVeiculo = new DO.TipoVeiculo();
-                    var vDescricao = objTipoVeiculo.GetTipoVeiculo(item.IdTipoVeiculo).FirstOrDefault().Descricao;
+                    var vDescricao = objTipoVeiculo.GetTipoVeiculo(String.Empty, item.IdTipoVeiculo).FirstOrDefault().Descricao;
                     if (!string.IsNullOrWhiteSpace(vDescricao))
                         objGridVeiculo.DescricaoTipoVeiculo = vDescricao;
                     else

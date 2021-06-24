@@ -60,7 +60,7 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
                             hfIdTipoVeiculo.Value = objTipoVeiculo.IdTipoVeiculo.ToString();
                             this.tbDescricao.Text = objTipoVeiculo.Descricao;
 
-                            this.tbDescricao.Enabled = false;
+                            //this.tbDescricao.Enabled = false;
                         }
                     }
                     break;
@@ -119,9 +119,9 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
 
                     objTipoVeiculo.PostTipoVeiculo(objTipoVeiculo);
 
-                    CarregarTipoVeiculo(string.Empty);
                     LimparFormulario();
                     util.ShowMessage("Tipo Veículo alterado com sucesso!", upnTipoVeiculo);
+                    CarregarTipoVeiculo(string.Empty);
                 }
                 catch (Exception ex)
                 {
@@ -199,7 +199,7 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
 
             this.hTitulo.InnerText = "Cadastrar Veículo";
 
-            this.tbDescricao.Enabled = true;
+            //this.tbDescricao.Enabled = true;
         }
         #endregion
     }

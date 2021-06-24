@@ -2,7 +2,7 @@
 
 <asp:Content ID="TipoVeiculoContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upnTipoVeiculo" runat="server">
-        <Contenttemplate>
+        <ContentTemplate>
             <div class="jumbotron">
                 <h1>Tipo Veículo</h1>
                 <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir o tipo veículo.</p>
@@ -75,7 +75,7 @@
                     <fieldset>
                         <legend>
                             <h2 runat="server" id="hTitulo">Cadastrar Tipo Veículo</h2>
-                         </legend>    
+                        </legend>
                         <div class="row">
                             <div class="col-md-12">
                                 <table>
@@ -84,18 +84,12 @@
                                             <asp:Label runat="server" ID="lbDescricao">Descricao:</asp:Label></td>
                                         <td>
                                             <asp:HiddenField runat="server" ID="hfIdTipoVeiculo" />
-                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="7"></asp:TextBox></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <asp:Label runat="server" ID="lbTipoVeiculo">Tipo Veículo:</asp:Label></td>
-                                        <td>
-                                            <asp:DropDownList runat="server" ID="ddlTipoVeiculo"></asp:DropDownList></td>
+                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="150"></asp:TextBox></td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>                      
-                    </div>
+                        </div>
+                </div>
                 </fieldset>
                 <br />
                 <p>
@@ -106,6 +100,6 @@
                 </p>
 
             </div>
-        </Contenttemplate>
+        </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
