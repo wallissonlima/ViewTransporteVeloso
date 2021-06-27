@@ -55,7 +55,7 @@
                         <li><a runat="server" href="~/Form/Veiculo/ManterVeiculo.aspx">Veículo</a></li>
                         <li><a runat="server" href="~/Form/TipoVeiculo/TipoVeiculo.aspx">Tipo Veículo</a></li>
                         <li><a runat="server" href="~/Form/MaoDeObra/ManterMaoDeObra.aspx">Mao De Obra</a></li>
-                        <li><a runat="server" href="~/">Página inicial</a></li>
+                        <li><a runat="server" href="~/Form/Pecas/ManterPeca.aspx">Peças</a></li>
                         <li><a runat="server" href="~/About">Sobre</a></li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>
                     </ul>

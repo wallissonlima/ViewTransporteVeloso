@@ -116,6 +116,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Form\MaoDeObra\ManterMaoDeObra.aspx" />
+    <Content Include="Form\Pecas\ManterPeca.aspx" />
     <Content Include="Form\TipoVeiculo\TipoVeiculo.aspx" />
     <Content Include="Form\Veiculo\ManterVeiculo.aspx" />
     <Content Include="Global.asax" />
@@ -189,6 +190,7 @@
     </Compile>
     <Compile Include="DO\Manutencao.cs" />
     <Compile Include="DO\MaoDeObra.cs" />
+    <Compile Include="DO\Peca.cs" />
     <Compile Include="DO\TipoVeiculo.cs" />
     <Compile Include="DO\Veiculo.cs" />
     <Compile Include="Form\MaoDeObra\ManterMaoDeObra.aspx.cs">
@@ -197,6 +199,13 @@
     </Compile>
     <Compile Include="Form\MaoDeObra\ManterMaoDeObra.aspx.designer.cs">
       <DependentUpon>ManterMaoDeObra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Pecas\ManterPeca.aspx.cs">
+      <DependentUpon>ManterPeca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Pecas\ManterPeca.aspx.designer.cs">
+      <DependentUpon>ManterPeca.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\TipoVeiculo\TipoVeiculo.aspx.cs">
       <DependentUpon>TipoVeiculo.aspx</DependentUpon>

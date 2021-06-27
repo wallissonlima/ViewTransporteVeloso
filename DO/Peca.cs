@@ -10,23 +10,24 @@ using System.Web.Configuration;
 
 namespace ViewTransporteVeloso.DO
 {
-    public class MaoDeObra
+    public class Peca
     {
-        public int IdMaoDeObra { get; set; }
-        public string Descricao { get; set; }
+        public int IdPeca { get; set; }
+        public string Nome { get; set; }
+        public int Quantidade { get; set; }
         public Decimal Valor { get; set; }
 
-        #region
-        public List<MaoDeObra> GetAll()
+        #region [REQUISIÇÕES HTTPS]
+        public List<Peca> GetAll()
         {
-            List<MaoDeObra> lstMaoDeObra = new List<MaoDeObra>();
+            List<Peca> lstPeca = new List<Peca>();
 
             //Recupera o endereço do serviço e monta a requisição. 
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-            var urlPreenchida = ApiBaseUrl + "MaoDeObra/GetAll";
+            var vPath = "Peca/GetAll";
 
             //Preenche o cabeçalho da requisição
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(urlPreenchida);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + vPath);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "GET";
 
@@ -35,8 +36,8 @@ namespace ViewTransporteVeloso.DO
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 //Obtem a resposta e desserializa o objeto Json.
-                var retornoAPI = JsonConvert.DeserializeObject<List<DO.MaoDeObra>>(streamReader.ReadToEnd()).ToList();
-                lstMaoDeObra = retornoAPI;
+                var retornoAPI = JsonConvert.DeserializeObject<List<DO.Peca>>(streamReader.ReadToEnd()).ToList();
+                lstPeca = retornoAPI;
             }
 
             //Fecha a requisição existente
@@ -47,19 +48,20 @@ namespace ViewTransporteVeloso.DO
             }
 
             //Retorna do valor
-            return lstMaoDeObra;
+            return lstPeca;
         }
 
-        public List<MaoDeObra> GetMaoDeObra(string descricao = null, int idMaoDeObra = 0)
+        public List<Peca> GetPeca(string nome = null, int idPeca = 0)
         {
-            List<MaoDeObra> lstMaoDeObra = new List<MaoDeObra>();
+            List<Peca> lstPeca = new List<Peca>();
 
             //Recupera o endereço do serviço e monta a requisição. 
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-            var urlPreenchida = ApiBaseUrl + "MaoDeObra/GetMaoDeObra?idMaoDeObra=" + idMaoDeObra;
+            var vPath = "Peca/GetPeca?nome=" + nome +
+                        "&idPeca=" + idPeca;
 
             //Preenche o cabeçalho da requisição
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(urlPreenchida);
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + vPath);
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "GET";
 
@@ -68,8 +70,8 @@ namespace ViewTransporteVeloso.DO
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 //Obtem a resposta e desserializa o objeto Json.
-                var retornoAPI = JsonConvert.DeserializeObject<List<DO.MaoDeObra>>(streamReader.ReadToEnd()).ToList();
-                lstMaoDeObra = retornoAPI;
+                var retornoAPI = JsonConvert.DeserializeObject<List<DO.Peca>>(streamReader.ReadToEnd()).ToList();
+                lstPeca = retornoAPI;
             }
 
             //Fecha a requisição existente
@@ -80,17 +82,17 @@ namespace ViewTransporteVeloso.DO
             }
 
             //Retorna do valor
-            return lstMaoDeObra;
+            return lstPeca;
         }
 
-        public bool DeleteMaoDeObra(string descricao = "", int idMaoDeObra = 0)
+        public bool DeletePeca(string nome = "", int idPeca = 0)
         {
             try
             {
                 //Recupera o endereço do serviço e monta a requisição. 
                 string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-                string vPath = "MaoDeObra/DeleteMaoDeObra?descricao=" + descricao +
-                               "&idMaoDeObra=" + idMaoDeObra;
+                string vPath = "Peca/DeletePeca?nome=" + nome +
+                               "&idPeca=" + idPeca;
 
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + vPath);
                 httpWebRequest.ContentType = "application/json";
@@ -124,20 +126,22 @@ namespace ViewTransporteVeloso.DO
         }
 
         /// <summary>
-        /// Altera um veículo existente
+        /// Altera um Peças existente
         /// </summary>
-        /// <param name="maoDeObra"></param>
+        /// <param name="peca"></param>
         /// <returns></returns>
-        public bool PostMaoDeObra(MaoDeObra maoDeObra)
+        public bool PostPeca(Peca peca)
         {
-            MaoDeObra objMaoDeObra = new MaoDeObra();
+            Peca objPeca = new Peca();
 
             //Recupera o endereço do serviço e monta a requisição. 
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-            string PerfilPath = "MaoDeObra/PostMaoDeObra?" +
-                                "idMaoDeObra=" + maoDeObra.IdMaoDeObra +
-                                "&descricao=" + maoDeObra.Descricao +
-                                "&valor=" + maoDeObra.Valor;
+            string PerfilPath = "Peca/PostPeca?" +
+                                "idPeca=" + peca.IdPeca +
+                                "&nome=" + peca.Nome +
+                                "&quantidade=" + peca.Quantidade +
+                                "&valor=" + peca.Valor;
+
             try
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + PerfilPath);
@@ -177,19 +181,20 @@ namespace ViewTransporteVeloso.DO
         }
 
         /// <summary>
-        /// Insere um novo veículo
+        /// Insere um nova peça
         /// </summary>
-        /// <param name="maoDeObra"></param>
+        /// <param name="peca"></param>
         /// <returns></returns>
-        public bool PutMaoDeObra(MaoDeObra maoDeObra)
+        public bool PutPeca(Peca peca)
         {
-            MaoDeObra objMaoDeObra = new MaoDeObra();
+            Peca objPeca = new Peca();
 
             //Recupera o endereço do serviço e monta a requisição. 
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
-            string PerfilPath = "MaoDeObra/PutMaoDeObra?" +
-                                "&descricao=" + maoDeObra.Descricao +
-                                "&valor=" + maoDeObra.Valor;
+            string PerfilPath = "Peca/PutPeca?" +
+                                "&nome=" + peca.Nome +
+                                "&quantidade=" + peca.Quantidade +
+                                "&valor=" + peca.Valor;
             try
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + PerfilPath);
@@ -230,10 +235,11 @@ namespace ViewTransporteVeloso.DO
         #endregion
     }
 
-    public class GRIDMaoDeObra
+    public class GRIDPeca
     {
-        public int IdMaoDeObra { get; set; }
-        public string Descricao { get; set; }
+        public int IdPeca { get; set; }
+        public string Nome { get; set; }
+        public int Quantidade { get; set; }
         public Decimal Valor { get; set; }
     }
 }
