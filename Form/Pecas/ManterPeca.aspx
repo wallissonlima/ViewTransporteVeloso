@@ -5,7 +5,7 @@
         <ContentTemplate>
             <div class="jumbotron">
                 <h1>Manter Peça</h1>
-                <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir veículos.</p>
+                <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir peças.</p>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -86,7 +86,7 @@
                                             <asp:Label runat="server" ID="lbNome">Nome:</asp:Label></td>
                                         <td>
                                             <asp:HiddenField runat="server" ID="hfIdPeca" />
-                                            <asp:TextBox runat="server" ID="tbNome" MaxLength="7"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" ID="tbNome" MaxLength="50"></asp:TextBox></td>
                                     </tr>
                                     <tr>
                                         <td>

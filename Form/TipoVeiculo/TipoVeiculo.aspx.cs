@@ -60,7 +60,7 @@ namespace ViewTransporteVeloso.Form.TipoVeiculo
                             hfIdTipoVeiculo.Value = objTipoVeiculo.IdTipoVeiculo.ToString();
                             this.tbDescricao.Text = objTipoVeiculo.Descricao;
 
-                            //this.tbDescricao.Enabled = false;
+                            this.tbDescricao.Enabled = false;
                         }
                     }
                     break;
