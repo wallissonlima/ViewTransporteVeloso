@@ -19,9 +19,11 @@ namespace ViewTransporteVeloso.Form.Login
         protected void btnAutenticar_Click(object sender, EventArgs e)
         {
             DO.Usuario usuario = new DO.Usuario();
-            string cripitografia = util.getHashSha256(this.tbSenha.Text);
 
-            var objUsuario = usuario.GetAutenticar(this.tbLogin.Text, cripitografia);
+            //Criptografa a senha. 
+            string criptografia = util.getHashSha256(this.tbSenha.Text);
+
+            var objUsuario = usuario.GetAutenticar(this.tbLogin.Text, this.tbSenha.Text);
             if(objUsuario != null)
                 Response.Redirect("https://localhost:44311/");
             else
