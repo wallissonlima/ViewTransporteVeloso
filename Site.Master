@@ -51,7 +51,6 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <a class="navbar-brand" runat="server" href="~/"><img src="logo.png" width="130px"</a>
                         <li><a runat="server" href="~/Form/Veiculo/ManterVeiculo.aspx">Veículo</a></li>
                         <li><a runat="server" href="~/Form/TipoVeiculo/TipoVeiculo.aspx">Tipo Veículo</a></li>
                         <li><a runat="server" href="~/Form/MaoDeObra/ManterMaoDeObra.aspx">Mao De Obra</a></li>

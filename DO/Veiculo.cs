@@ -54,7 +54,7 @@ namespace ViewTransporteVeloso.DO
             //Retorna do valor
             return lstVeiculo;
         }
-
+        //PUSH WALLISSON 03062021
         public List<Veiculo> GetVeiculo(string placa = null, int idVeiculo = 0)
         {
             List<Veiculo> lstVeiculo = new List<Veiculo>();
