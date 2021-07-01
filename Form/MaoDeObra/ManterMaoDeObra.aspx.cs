@@ -58,10 +58,8 @@ namespace ViewTransporteVeloso.Form.MaoDeObra
                         {
                             hfIdMaoDeObra.Value = objMaoDeObra.IdMaoDeObra.ToString();
                             this.tbDescricao.Text = objMaoDeObra.Descricao;
-                            decimal.Parse(this.tbValor.Text);
-
-
-                            this.tbDescricao.Enabled = false;
+                            this.tbValor.Text = objMaoDeObra.Valor.ToString();
+                            this.tbValor.Text = objMaoDeObra.Valor.ToString();
                         }
                     }
                     break;

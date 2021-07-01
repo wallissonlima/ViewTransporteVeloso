@@ -115,6 +115,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Form\Login\Login.aspx" />
     <Content Include="Form\MaoDeObra\ManterMaoDeObra.aspx" />
     <Content Include="Form\Pecas\ManterPeca.aspx" />
     <Content Include="Form\TipoVeiculo\TipoVeiculo.aspx" />
@@ -192,7 +193,15 @@
     <Compile Include="DO\MaoDeObra.cs" />
     <Compile Include="DO\Peca.cs" />
     <Compile Include="DO\TipoVeiculo.cs" />
+    <Compile Include="DO\Usuario.cs" />
     <Compile Include="DO\Veiculo.cs" />
+    <Compile Include="Form\Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Form\MaoDeObra\ManterMaoDeObra.aspx.cs">
       <DependentUpon>ManterMaoDeObra.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Img\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

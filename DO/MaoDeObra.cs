@@ -137,7 +137,7 @@ namespace ViewTransporteVeloso.DO
             string PerfilPath = "MaoDeObra/PostMaoDeObra?" +
                                 "idMaoDeObra=" + maoDeObra.IdMaoDeObra +
                                 "&descricao=" + maoDeObra.Descricao +
-                                "&valor=" + maoDeObra.Valor;
+                                "&valor=" + maoDeObra.Valor.ToString();
             try
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + PerfilPath);
@@ -189,7 +189,7 @@ namespace ViewTransporteVeloso.DO
             string ApiBaseUrl = WebConfigurationManager.AppSettings["servicoTransporteVeloso"];
             string PerfilPath = "MaoDeObra/PutMaoDeObra?" +
                                 "&descricao=" + maoDeObra.Descricao +
-                                "&valor=" + maoDeObra.Valor;
+                                "&valor=" + maoDeObra.Valor.ToString();
             try
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(ApiBaseUrl + PerfilPath);

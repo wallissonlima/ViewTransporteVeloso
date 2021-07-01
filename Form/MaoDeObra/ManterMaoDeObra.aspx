@@ -2,12 +2,12 @@
 
 <asp:Content ID="MaoDeObraContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upnMaoDeObra" runat="server">
-        <Contenttemplate>
+        <ContentTemplate>
             <div class="jumbotron">
                 <h1>Mao De Obra</h1>
                 <p class="lead">Formulário responsável por cadastrar, editar, pesquisar e excluir a Mao-de-Obra.</p>
             </div>
-            <div class="row"> 
+            <div class="row">
                 <div class="col-md-12">
                     <fieldset title="Pesquisar Mao De Obra">
                         <legend>
@@ -37,7 +37,7 @@
                                 <Columns>
                                     <asp:BoundField DataField="idMaoDeObra" HeaderText="Código" Visible="false" />
                                     <asp:BoundField DataField="descricao" HeaderText="Descricao" />
-                                    <asp:BoundField DataField="valor" HeaderText="Valor" /> 
+                                    <asp:BoundField DataField="valor" HeaderText="Valor" />
                                     <asp:TemplateField>
                                         <ItemTemplate>
                                             <asp:Button ID="btnAlterar" runat="server"
@@ -76,7 +76,7 @@
                     <fieldset>
                         <legend>
                             <h2 runat="server" id="hTitulo">Cadastrar Mao De Obra</h2>
-                         </legend>
+                        </legend>
                         <div class="row">
                             <div class="col-md-12">
                                 <table>
@@ -85,19 +85,19 @@
                                             <asp:Label runat="server" ID="lbDescricao">Descricao:</asp:Label></td>
                                         <td>
                                             <asp:HiddenField runat="server" ID="hfIdMaoDeObra" />
-                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="500" TextMode="MultiLine" Height="30px"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" ID="tbDescricao" MaxLength="500" TextMode="MultiLine" Height="70px" Width="200px"></asp:TextBox></td>
                                     </tr>
-                                     <tr>
+                                    <tr>
                                         <td>
                                             <asp:Label runat="server" ID="lbValor">Valor:</asp:Label></td>
                                         <td>
-                                            <asp:TextBox runat="server" ID="tbValor" MaxLength="10" TextMode="MultiLine" Height="30px"></asp:TextBox></td>
+                                            <asp:TextBox runat="server" ID="tbValor" MaxLength="18" Height="30px"></asp:TextBox></td>
                                     </tr>
                                 </table>
                             </div>
-                        </div>                          
-                     </div>  
-                 </fieldset>
+                        </div>
+                </div>
+                </fieldset>
                 <br />
                 <p>
                     <%--<a runat="server" Onclick="btnSalvar_Click"  class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>--%>
@@ -107,6 +107,6 @@
                 </p>
 
             </div>
-        </Contenttemplate>
+        </ContentTemplate>
     </asp:UpdatePanel>
 </asp:Content>
