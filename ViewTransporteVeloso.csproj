@@ -120,6 +120,8 @@
     <Content Include="Form\MaoDeObra\ManterMaoDeObra.aspx" />
     <Content Include="Form\Pecas\ManterPeca.aspx" />
     <Content Include="Form\TipoVeiculo\TipoVeiculo.aspx" />
+    <Content Include="Form\Usuario\ManterUsuario.aspx" />
+    <Content Include="Form\Usuario\UsuarioPlataforma.aspx" />
     <Content Include="Form\Veiculo\ManterVeiculo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -223,6 +225,20 @@
     </Compile>
     <Compile Include="Form\TipoVeiculo\TipoVeiculo.aspx.designer.cs">
       <DependentUpon>TipoVeiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Usuario\ManterUsuario.aspx.cs">
+      <DependentUpon>ManterUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Usuario\ManterUsuario.aspx.designer.cs">
+      <DependentUpon>ManterUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Usuario\UsuarioPlataforma.aspx.cs">
+      <DependentUpon>UsuarioPlataforma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Usuario\UsuarioPlataforma.aspx.designer.cs">
+      <DependentUpon>UsuarioPlataforma.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\Veiculo\ManterVeiculo.aspx.cs">
       <DependentUpon>ManterVeiculo.aspx</DependentUpon>

@@ -33,7 +33,8 @@ namespace ViewTransporteVeloso.Form.Login
 
         protected void btnCadastrarUsuario_Click(object sender, EventArgs e)
         {
-            util.ShowMessage("Infelizmente a tela de cadastro de usuário ainda não foi desenvolvida! :(", upnLogin);
+            Response.Redirect("https://localhost:44311/Form/Usuario/UsuarioPlataforma.aspx");
+            //util.ShowMessage("Infelizmente a tela de cadastro de usuário ainda não foi desenvolvida! :(", upnLogin);
         }
     }
 }

@@ -29,7 +29,7 @@
 
                                 <p>
                                     <label for="email_login">Senha</label>
-                                    <asp:TextBox runat="server" ID="tbSenha" TextMode="Password" placeholder="Digite seu email"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="tbSenha" TextMode="Password" placeholder="Digite sua senha"></asp:TextBox>
                                 </p>
 
                                 <p>
