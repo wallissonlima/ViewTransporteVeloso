@@ -74,7 +74,7 @@ namespace ViewTransporteVeloso.Funcoes
         }
         #endregion
 
-        public static string getHashSha256(string text)
+        public string getHashSha256(string text)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(text);
             System.Security.Cryptography.SHA256Managed hashstring = new System.Security.Cryptography.SHA256Managed();
