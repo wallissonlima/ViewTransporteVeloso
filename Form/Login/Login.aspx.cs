@@ -23,11 +23,17 @@ namespace ViewTransporteVeloso.Form.Login
             //Criptografa a senha. 
             string criptografia = util.getHashSha256(this.tbSenha.Text);
 
-            var objUsuario = usuario.GetAutenticar(this.tbLogin.Text, this.tbSenha.Text);
-            if(objUsuario != null)
+            //var objUsuario = usuario.GetAutenticar(this.tbLogin.Text, this.tbSenha.Text);
+            var objUsuario = usuario.GetAutenticar(this.tbLogin.Text, criptografia);
+            if (objUsuario != null)
                 Response.Redirect("https://localhost:44311/");
             else
                 util.ShowMessage("Usuário ou Senha Inválido!", upnLogin);
+        }
+
+        protected void btnCadastrarUsuario_Click(object sender, EventArgs e)
+        {
+            util.ShowMessage("Infelizmente a tela de cadastro de usuário ainda não foi desenvolvida! :(", upnLogin);
         }
     }
 }

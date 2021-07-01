@@ -33,15 +33,6 @@ namespace ViewTransporteVeloso.Form.Login
         protected global::System.Web.UI.UpdatePanel upnLogin;
 
         /// <summary>
-        /// Controle lbLogin.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbLogin;
-
-        /// <summary>
         /// Controle tbLogin.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace ViewTransporteVeloso.Form.Login
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tbLogin;
-
-        /// <summary>
-        /// Controle lbSenha.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbSenha;
 
         /// <summary>
         /// Controle tbSenha.
@@ -76,5 +58,14 @@ namespace ViewTransporteVeloso.Form.Login
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAutenticar;
+
+        /// <summary>
+        /// Controle btnCadastrarUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnCadastrarUsuario;
     }
 }
